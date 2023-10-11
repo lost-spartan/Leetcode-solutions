@@ -3,11 +3,11 @@ select max(salary) as SecondHighestSalary
 from Employee
 where salary not in (select max(salary) from Employee)
 
-SELECT DISTINCT salary AS SecondHighestSalary
-FROM Employee
-ORDER BY salary DESC
-LIMIT 1 OFFSET 1;
-
+select(
+ select distinct Salary 
+ from Employee order by salary desc 
+ limit 1 offset 1
+) as SecondHighestSalary;
 
 -- Table: Employee
 
